@@ -19,6 +19,8 @@ export default function AdminClient() {
           <p>课程：{o.application.course}</p>
           <p>金额：{o.amount}</p>
           <p>状态：{o.status}</p>
+          <p>凭证编号：{o.couponCode || "未生成"}</p>
+          <p>是否核销：{o.couponUsed ? "已使用" : "未使用"}</p>
         </div>
       ))}
     </>
