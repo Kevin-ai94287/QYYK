@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Application {
+  id        Int     @id @default(autoincrement())
+  name      String
+  phone     String
+  course    String
+  amount    Float
+  status    String  @default("pending")
+  createdAt DateTime @default(now())
+  orders    Order[]
+}
+
+model Order {
+  id            Int         @id @default(autoincrement())
+  orderNo       String      @unique
+  applicationId Int
+  amount        Float
+  status        String      @default("unpaid")
+  createdAt     DateTime    @default(now())
+  paidAt        DateTime?
+  application   Application @relation(fields: [applicationId], references: [id])
+}

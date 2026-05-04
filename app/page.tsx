@@ -1,0 +1,63 @@
+"use client";
+
+import { useState } from "react";
+
+export default function Home() {
+ const [form, setForm] = useState({
+ name: "",
+ phone: "",
+ course: "",
+ amount: 100,
+ });
+
+ async function submit() {
+ const res = await fetch("/api/create-order", {
+ method: "POST",
+ body: JSON.stringify(form),
+ });
+
+ const data = await res.json();
+ location.href = data.payUrl;
+ }
+
+ return (
+ <div style={{
+ minHeight: "100vh",
+ background: "#0f172a",
+ color: "#fff",
+ display: "flex",
+ alignItems: "center",
+ justifyContent: "center"
+ }}>
+ <div style={{
+ width: 400,
+ padding: 30,
+ background: "#1e293b",
+ borderRadius: 10
+ }}>
+ <h1 style={{ fontSize: 24, marginBottom: 20 }}>清元艺考报名</h1>
+
+ <input placeholder="姓名" style={{ width: "100%", marginBottom: 10 }}
+ onChange={e => setForm({...form, name: e.target.value})} />
+
+ <input placeholder="手机号" style={{ width: "100%", marginBottom: 10 }}
+ onChange={e => setForm({...form, phone: e.target.value})} />
+
+ <input placeholder="课程" style={{ width: "100%", marginBottom: 10 }}
+ onChange={e => setForm({...form, course: e.target.value})} />
+
+ <input type="number" placeholder="金额" style={{ width: "100%", marginBottom: 20 }}
+ onChange={e => setForm({...form, amount: Number(e.target.value)})} />
+
+ <button onClick={submit} style={{
+ width: "100%",
+ padding: 10,
+ background: "#22c55e",
+ color: "#000"
+ }}>
+ 提交并支付
+ </button>
+ </div>
+ </div>
+ );
+}
