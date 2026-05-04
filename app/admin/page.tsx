@@ -11,24 +11,18 @@ export default async function Admin() {
   }
 
   return (
-    <div style={{ padding: 40 }}>
-      <h1>订单后台</h1>
-      <a
-        href="/api/export"
-        target="_blank"
-        style={{
-          display: "inline-block",
-          marginBottom: 20,
-          padding: "8px 16px",
-          background: "#22c55e",
-          color: "#000",
-          textDecoration: "none",
-          borderRadius: 4,
-        }}
-      >
-        导出名单
-      </a>
-      <AdminClient />
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "#0f172a",
+        color: "#fff",
+        padding: 40,
+      }}
+    >
+      <div style={{ maxWidth: 1400, margin: "0 auto" }}>
+        <h1 style={{ fontSize: 24, marginBottom: 24 }}>招生管理后台</h1>
+        <AdminClient />
+      </div>
     </div>
   );
 }
