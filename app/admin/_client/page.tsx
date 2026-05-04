@@ -38,6 +38,7 @@ export default function AdminClient() {
       {orders.map((o: any) => (
         <div key={o.id} style={{ borderBottom: "1px solid #ccc", marginBottom: 10, paddingBottom: 10 }}>
           <p style={{ fontWeight: "bold", color: "#22c55e" }}>订单号：{o.orderNo}</p>
+          <p>下单时间：{new Date(o.createdAt).toLocaleString("zh-CN")}</p>
           <p>学生姓名：{o.application.studentName || o.application.name}</p>
           <p>学生电话：{o.application.studentPhone || "未填"}</p>
           <p>联系人姓名：{o.application.contactName || o.application.name}</p>
