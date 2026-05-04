@@ -78,6 +78,10 @@ export default function PayPage() {
           <p>支付完成后，点击下方按钮提交确认。</p>
         </div>
 
+        <p style={{ marginBottom: 10, color: "#94a3b8" }}>
+          提交后需工作人员核对到账，确认后生成抵扣凭证。
+        </p>
+
         <button
           onClick={submitConfirm}
           disabled={loading || !orderNo}
@@ -91,7 +95,7 @@ export default function PayPage() {
             border: "none",
           }}
         >
-          {loading ? "正在提交..." : "我已支付，提交确认"}
+          {loading ? "正在提交..." : "我已完成转账，通知工作人员确认"}
         </button>
       </div>
     </div>
