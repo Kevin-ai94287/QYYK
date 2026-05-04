@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>清元艺考 - 圆你艺术梦想</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #fff; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    img { width: 100%; border-radius: 12px; display: block; }
+
+    /* 导航 */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 40px; background: #1e293b;
+    }
+    nav .logo { font-size: 22px; font-weight: bold; }
+    nav a {
+      display: inline-block; padding: 8px 20px; background: #22c55e; color: #000;
+      text-decoration: none; border-radius: 8px; font-weight: bold;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center; padding: 80px 20px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+    .hero h1 { font-size: 48px; margin-bottom: 16px; }
+    .hero p { font-size: 18px; color: #94a3b8; margin-bottom: 24px; }
+    .hero .btn {
+      display: inline-block; padding: 14px 32px; background: #22c55e; color: #000;
+      text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 18px;
+    }
+
+    /* Section */
+    section { padding: 60px 20px; }
+    section h2 { font-size: 32px; margin-bottom: 32px; text-align: center; }
+
+    /* 图片网格 */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    /* Footer CTA */
+    .cta {
+      text-align: center; padding: 60px 20px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+    }
+    .cta h2 { font-size: 36px; margin-bottom: 12px; }
+    .cta .price { font-size: 18px; color: #22c55e; margin-bottom: 20px; }
+    .cta .btn {
+      display: inline-block; padding: 14px 32px; background: #22c55e; color: #000;
+      text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 18px;
+    }
+    .cta .qrcode { margin-top: 20px; width: 200px; border-radius: 12px; }
+
+    @media (max-width: 768px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .hero h1 { font-size: 32px; }
+    }
+    @media (max-width: 480px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav>
+  <div class="logo">清元艺考</div>
+  <a href="https://qyyk.vercel.app" target="_blank">立即报名</a>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>清元艺术培训学校</h1>
+  <p>专注音乐艺考培训 · 名师团队 · 系统教学 · 助力梦想</p>
+  <a href="https://qyyk.vercel.app" target="_blank" class="btn">立即报名</a>
+</div>
+
+<!-- 师资团队 -->
+<section>
+  <div class="container">
+    <h2>核心师资团队</h2>
+    <div class="grid">
+      <img src="/images/teachers/陶建阿成（第5）（音乐部艺术总监）.JPG" alt="陶建阿成" style="width:100%;border-radius:12px" />
+      <img src="/images/teachers/潘艳仙（中1）（音乐部校长）.JPG" alt="潘艳仙" style="width:100%;border-radius:12px" />
+      <img src="/images/teachers/石校昆（第2）（音乐部总监）.JPG" alt="石校昆" style="width:100%;border-radius:12px" />
+      <img src="/images/teachers/邓朝旭（第4）（理论教学总监）.JPG" alt="邓朝旭" style="width:100%;border-radius:12px" />
+      <img src="/images/teachers/何普瓦（第3）（钢琴教学总监）.JPG" alt="何普瓦" style="width:100%;border-radius:12px" />
+      <img src="/images/teachers/梁馨元-音乐部助教.JPG" alt="梁馨元" style="width:100%;border-radius:12px" />
+    </div>
+  </div>
+</section>
+
+<!-- 教学环境 -->
+<section style="background:#1e293b">
+  <div class="container">
+    <h2>教学环境</h2>
+    <div class="grid">
+      <img src="/images/env/4ACFE740-5FAD-4117-B57B-7EAF4B7F6B43.PNG" alt="教室1" style="width:100%;border-radius:12px" />
+      <img src="/images/env/5E2E7987-4228-4C2B-86C4-958935F70E9A.PNG" alt="教室2" style="width:100%;border-radius:12px" />
+      <img src="/images/env/81851024-C963-4240-B6D9-30B66B1CA7A8.PNG" alt="教室3" style="width:100%;border-radius:12px" />
+    </div>
+  </div>
+</section>
+
+<!-- 生活环境 -->
+<section>
+  <div class="container">
+    <h2>住宿与生活环境</h2>
+    <div class="grid">
+      <img src="/images/life/6D309B48-412E-4457-970B-17639380656E.PNG" alt="宿舍1" style="width:100%;border-radius:12px" />
+      <img src="/images/life/A17F8FB8-ED09-48C0-AA1F-19B356029CA5.PNG" alt="宿舍2" style="width:100%;border-radius:12px" />
+      <img src="/images/life/B37196AE-ADD4-4C22-BACB-5873EB4DDE14.PNG" alt="食堂" style="width:100%;border-radius:12px" />
+    </div>
+  </div>
+</section>
+
+<!-- 底部成交区 -->
+<div class="cta">
+  <h2>100元锁定名额</h2>
+  <p class="price">到校报名可抵扣2000元学费</p>
+  <a href="https://qyyk.vercel.app" target="_blank" class="btn">立即报名</a>
+  <br /><br />
+  <img src="/images/qrcode/二维码.JPG" class="qrcode" />
+</div>
+
+</body>
+</html>
