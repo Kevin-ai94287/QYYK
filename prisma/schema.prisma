@@ -7,14 +7,19 @@ datasource db {
 }
 
 model Application {
-  id        Int     @id @default(autoincrement())
-  name      String
-  phone     String
-  course    String
-  amount    Float
-  status    String  @default("pending")
-  createdAt DateTime @default(now())
-  orders    Order[]
+  id              Int      @id @default(autoincrement())
+  name            String
+  phone           String
+  studentName     String?
+  studentPhone    String?
+  contactName     String?
+  contactPhone    String?
+  contactRelation String?
+  course          String
+  amount          Float
+  status          String   @default("pending")
+  createdAt       DateTime @default(now())
+  orders          Order[]
 }
 
 model Order {

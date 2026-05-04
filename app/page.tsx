@@ -4,8 +4,11 @@ import { useState } from "react";
 
 export default function Home() {
   const [form, setForm] = useState({
-    name: "",
-    phone: "",
+    studentName: "",
+    studentPhone: "",
+    contactName: "",
+    contactPhone: "",
+    contactRelation: "",
     course: "",
     amount: 100,
   });
@@ -43,24 +46,70 @@ export default function Home() {
       >
         <h1 style={{ fontSize: 24, marginBottom: 20 }}>清元艺考报名</h1>
 
+        <p style={{ marginBottom: 4, fontSize: 14, color: "#94a3b8" }}>
+          学生信息
+        </p>
+
         <input
-          placeholder="姓名"
+          placeholder="学生姓名 *"
           style={{ width: "100%", marginBottom: 10 }}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
+          onChange={(e) =>
+            setForm({ ...form, studentName: e.target.value })
+          }
         />
 
         <input
-          placeholder="手机号"
+          placeholder="学生电话（选填）"
           style={{ width: "100%", marginBottom: 10 }}
-          onChange={(e) => setForm({ ...form, phone: e.target.value })}
+          onChange={(e) =>
+            setForm({ ...form, studentPhone: e.target.value })
+          }
         />
+
+        <p style={{ marginBottom: 4, fontSize: 14, color: "#94a3b8" }}>
+          联系人信息
+        </p>
+
+        <input
+          placeholder="联系人姓名 *"
+          style={{ width: "100%", marginBottom: 10 }}
+          onChange={(e) =>
+            setForm({ ...form, contactName: e.target.value })
+          }
+        />
+
+        <input
+          placeholder="联系人手机号 *"
+          style={{ width: "100%", marginBottom: 10 }}
+          onChange={(e) =>
+            setForm({ ...form, contactPhone: e.target.value })
+          }
+        />
+
+        <select
+          value={form.contactRelation}
+          onChange={(e) =>
+            setForm({ ...form, contactRelation: e.target.value })
+          }
+          style={{ width: "100%", marginBottom: 10 }}
+        >
+          <option value="">联系人身份 *</option>
+          <option value="本人">本人</option>
+          <option value="父亲">父亲</option>
+          <option value="母亲">母亲</option>
+          <option value="其他">其他</option>
+        </select>
+
+        <p style={{ marginBottom: 4, fontSize: 14, color: "#94a3b8" }}>
+          报名课程
+        </p>
 
         <select
           value={form.course}
           onChange={(e) => setForm({ ...form, course: e.target.value })}
           style={{ width: "100%", marginBottom: 10 }}
         >
-          <option value="">请选择课程</option>
+          <option value="">请选择课程 *</option>
           <option value="音乐">音乐</option>
           <option value="美术">美术</option>
           <option value="舞蹈">舞蹈</option>

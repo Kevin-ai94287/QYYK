@@ -10,8 +10,13 @@ export async function POST(req: Request) {
 
   const app = await prisma.application.create({
     data: {
-      name: body.name,
-      phone: body.phone,
+      name: body.studentName,
+      phone: body.contactPhone,
+      studentName: body.studentName,
+      studentPhone: body.studentPhone || "",
+      contactName: body.contactName,
+      contactPhone: body.contactPhone,
+      contactRelation: body.contactRelation,
       course: body.course,
       amount: body.amount,
     },

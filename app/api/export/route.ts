@@ -9,10 +9,11 @@ export async function GET() {
     include: { application: true },
   });
 
-  let csv = "订单号,姓名,电话,课程,金额,状态,凭证编号,是否核销\n";
+  let csv = "订单号,学生姓名,学生电话,联系人姓名,联系人电话,联系人身份,课程,金额,状态,凭证编号,是否核销\n";
 
   orders.forEach((o) => {
-    csv += `${o.orderNo},${o.application.name},${o.application.phone},${o.application.course},${o.amount},${o.status},${o.couponCode || ""},${o.couponUsed ? "已核销" : "未核销"}\n`;
+    const a = o.application;
+    csv += `${o.orderNo},${a.studentName || a.name},${a.studentPhone || ""},${a.contactName || a.name},${a.contactPhone || a.phone},${a.contactRelation || ""},${a.course},${o.amount},${o.status},${o.couponCode || ""},${o.couponUsed ? "已核销" : "未核销"}\n`;
   });
 
   return new Response(csv, {
