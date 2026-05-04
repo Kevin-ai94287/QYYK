@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
 }
 
 model Application {
@@ -25,7 +25,7 @@ model Order {
   status        String      @default("unpaid")
   createdAt     DateTime    @default(now())
   paidAt        DateTime?
-  couponCode    String?   @unique
-  couponUsed    Boolean   @default(false)
+  couponCode    String?     @unique
+  couponUsed    Boolean     @default(false)
   application   Application @relation(fields: [applicationId], references: [id])
 }
