@@ -9,8 +9,10 @@ export default function Home() {
     course: "",
     amount: 100,
   });
+  const [loading, setLoading] = useState(false);
 
   async function submit() {
+    setLoading(true);
     const res = await fetch("/api/create-order", {
       method: "POST",
       body: JSON.stringify(form),
@@ -73,14 +75,20 @@ export default function Home() {
 
         <button
           onClick={submit}
+          disabled={loading}
           style={{
             width: "100%",
-            padding: 10,
-            background: "#22c55e",
+            padding: 12,
+            background: loading ? "#166534" : "#22c55e",
             color: "#000",
+            borderRadius: 8,
+            fontWeight: "bold",
+            fontSize: 16,
+            border: "none",
+            cursor: loading ? "not-allowed" : "pointer",
           }}
         >
-          提交并支付
+          {loading ? "正在锁定名额..." : "立即锁定名额（100元定金）"}
         </button>
       </div>
     </div>
