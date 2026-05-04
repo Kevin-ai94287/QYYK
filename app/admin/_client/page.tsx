@@ -37,6 +37,7 @@ export default function AdminClient() {
     <>
       {orders.map((o: any) => (
         <div key={o.id} style={{ borderBottom: "1px solid #ccc", marginBottom: 10, paddingBottom: 10 }}>
+          <p style={{ fontWeight: "bold", color: "#22c55e" }}>订单号：{o.orderNo}</p>
           <p>姓名：{o.application.name}</p>
           <p>电话：{o.application.phone}</p>
           <p>课程：{o.application.course}</p>
