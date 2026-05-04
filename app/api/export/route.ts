@@ -23,9 +23,12 @@ export async function GET() {
     csv += `${o.orderNo},${new Date(o.createdAt).toLocaleString("zh-CN")},${a.studentName || a.name},${a.studentPhone || ""},${a.contactName || a.name},${a.contactPhone || a.phone},${a.contactRelation || ""},${a.course},${o.amount},${getStatusText(o.status)},${o.couponCode || ""},${o.couponUsed ? "已核销" : "未核销"}\n`;
   });
 
-  return new Response(csv, {
+  const csvContent = "\uFEFF" + csv;
+
+  return new Response(csvContent, {
     headers: {
-      "Content-Type": "text/csv",
+      "Content-Type": "text/csv; charset=utf-8",
+      "Content-Disposition": 'attachment; filename="qingyuan-orders.csv"',
     },
   });
 }
