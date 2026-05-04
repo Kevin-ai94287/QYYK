@@ -22,7 +22,23 @@ export async function POST(req: Request) {
     },
   });
 
-  const orderNo = Date.now().toString();
+  function generateOrderNo() {
+    const now = new Date();
+
+    const YYYY = now.getFullYear();
+    const MM = String(now.getMonth() + 1).padStart(2, "0");
+    const DD = String(now.getDate()).padStart(2, "0");
+
+    const HH = String(now.getHours()).padStart(2, "0");
+    const mm = String(now.getMinutes()).padStart(2, "0");
+    const ss = String(now.getSeconds()).padStart(2, "0");
+
+    const random = Math.floor(Math.random() * 900 + 100); // 3位随机数
+
+    return `${YYYY}${MM}${DD}${HH}${mm}${ss}-${random}`;
+  }
+
+  const orderNo = generateOrderNo();
 
   await prisma.order.create({
     data: {
